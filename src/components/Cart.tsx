@@ -52,7 +52,6 @@ const Cart = () => {
     setRowPrice(rowAmt);
   }, [productData]);
 
-  //   Stripe Payment
   const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
   );
@@ -69,9 +68,8 @@ const Cart = () => {
     const data = await response.json();
 
     if (response.ok) {
-      // await dispatch(saveOrder({ order: productData, id: data.id }));
       stripe?.redirectToCheckout({ sessionId: data.id });
-      // dispatch(resetCart());
+     
     } else {
       throw new Error("Failed to create Stripe Payment");
     }

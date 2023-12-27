@@ -1,8 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Slider from "react-slick";
-import { sliderOne, sliderTwo, sliderThree } from "@/assets";
+import { sliderTwo,  } from "@/assets";
 import Image from "next/image";
 import { Clock, Smartphone, Map, MailPlus } from "lucide-react";
 
